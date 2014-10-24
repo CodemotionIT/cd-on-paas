@@ -64,7 +64,7 @@
 				<version>2.17</version>
 				<configuration>
 					<systemPropertyVariables>
-						<baseUrl>http://localhost:8080</baseUrl>
+						<baseUrl>http://localhost:8080/cd-on-paas/</baseUrl>
 					</systemPropertyVariables>
 					<excludes>
 						<exclude>**/*AcceptanceTest.java</exclude>

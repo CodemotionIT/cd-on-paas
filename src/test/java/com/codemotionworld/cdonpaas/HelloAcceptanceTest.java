@@ -12,9 +12,9 @@ public class HelloAcceptanceTest {
 
     @Test
     public void testGetReturnsHello() {
-        String baseUrl = System.getProperty("baseUrl", "http://localhost:8080");
+        String baseUrl = System.getProperty("baseUrl", "http://localhost:8080/cd-on-paas/");
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target(baseUrl + "/cd-on-paas/");
+        WebTarget target = client.target(baseUrl);
 
         String message = target.path("hello").request().get(String.class);
 
