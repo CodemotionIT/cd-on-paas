@@ -22,7 +22,7 @@ mvn -Dtest=**/*AcceptanceTest.java -DbaseUrl={deployed application base url} tes
 ## Development environment
 
 Vagrant box provides:
-- Open Jdk 1.7
+- OpenJDK 1.7
 - Maven 3
 - Tomcat 7
 
@@ -36,9 +36,9 @@ Vagrant box provides:
 
 Install vagrant plugins
 ```
-vagrant plugin install vagrant-omnibus                                                                                                                                      
+vagrant plugin install vagrant-omnibus
 vagrant plugin install vagrant-berkshelf
-
+```
 Start vagrant box
 ```
 vagrant up
