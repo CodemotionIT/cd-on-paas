@@ -1,3 +1,19 @@
 language: java
 jdk:
   - openjdk7
+
+env:
+  global:
+    secure: Eu3L2GBFIYszMxwlNyT6CFMn0q/CSu38ROfk6d7vBzqeFNWlxbfctb6xecBCRSq1x0Ps0jCM1n7ozD1ilu8AbPkuwm+0gr7tEn0D9ewOpgFkTLlMxmaEb698AK+ILDxF7uL4T+JkjFQzxrevLUvsC6sCQCn2m45wTKvKrRceRwg=
+
+before_install:
+  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  - gem install dpl
+
+script:
+  - mvn test
+  - dpl --provider=heroku --api-key=`heroku auth:token` --app=cd-on-paas-testing
+  - mvn -Dtest=**/*AcceptanceTest.java -DbaseUrl='https://cd-on-paas-testing.herokuapp.com/' test
+
+after_success:
+  - dpl --provider=heroku --api-key=`heroku auth:token` --app=cd-on-paas
