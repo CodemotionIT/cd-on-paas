@@ -4,7 +4,7 @@ jdk:
 
 env:
   global:
-    secure: Eu3L2GBFIYszMxwlNyT6CFMn0q/CSu38ROfk6d7vBzqeFNWlxbfctb6xecBCRSq1x0Ps0jCM1n7ozD1ilu8AbPkuwm+0gr7tEn0D9ewOpgFkTLlMxmaEb698AK+ILDxF7uL4T+JkjFQzxrevLUvsC6sCQCn2m45wTKvKrRceRwg=
+    secure: getgF3hG/K+wWV+ff8lXsmYm4PPt536O8Hcsx180BitKRh7OOih7gRc5yywXFEJPe8+COfZ2YvAUMvQrUVmlY/lP/vTLfSxZGzWTxeD2z+dM7hDb2FxnMP9bk91gdN9l8HbEBT3Z5iYpu2XDeb4hFrdnaiw601eO2jqOatek7tU=
 
 before_install:
   - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
