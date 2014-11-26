@@ -7,6 +7,7 @@ env:
   - CLOUDSDK_CORE_DISABLE_PROMPTS=1
   - CLOUDSDK_PYTHON_SITEPACKAGES=1
   - PROJECT_ID=plasma-cascade-621
+  - SRV_ACCOUNT=318301250744-gg9klbthoi4069jl0nudifnd50j4bsim@developer.gserviceaccount.com
 
 before_install:
 - sudo pip install PyOpenSSL
@@ -15,9 +16,7 @@ before_install:
 - curl https://sdk.cloud.google.com | bash
 - $HOME/google-cloud-sdk/bin/gcloud components update app -q
 - $HOME/google-cloud-sdk/bin/gcloud config set project $PROJECT_ID
-- $HOME/google-cloud-sdk/bin/gcloud auth activate-service-account
-  318301250744-gg9klbthoi4069jl0nudifnd50j4bsim@developer.gserviceaccount.com
-  --key-file $PROJECT_ID.p12
+- $HOME/google-cloud-sdk/bin/gcloud auth activate-service-account $SRV_ACCOUNT --key-file $PROJECT_ID.p12
 
 script:
 - mvn package

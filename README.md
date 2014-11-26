@@ -39,12 +39,14 @@ mvn -Dtest=**/*AcceptanceTest.java -DbaseUrl={deployed application base url} tes
 3. [Login with Travis-CI](https://github.com/travis-ci/travis.rb#login)
    and [encrypt the p12 key file](http://docs.travis-ci.com/user/encrypting-files/)
    with `travis encrypt-file path/to/my-key-file.p12`. Copy the decryption command.
-4. Replace `PROJECT_ID=plasma-cascade-621` with your Project ID in [.travis.yml](.travis.yml).
-   Also replace completely the line that starts with `- openssl ...` with the decryption command obtained
+4. Replace completely the line that starts with `- openssl ...` with the decryption command obtained
    in the previous step, while leaving `$PROJECT_ID` as is. The command assumes that your p12 file
    is named after the Project ID.
-5. Replace `plasma-cascade-621` part of `<application>plasma-cascade-621</application>` with your Project ID
-   in [appengine-web.xml](src/main/webapp/WEB-INF/appengine-web.xml).
+5. Replace `SRV_ACCOUNT=...` in `env/global` section of [.travis.yml](.travis.yml) with the
+   email address of the Service Account created in step 2.
+6. Replace `PROJECT_ID=plasma-cascade-621` and `<application>plasma-cascade-621</application>`
+   with your Project ID in [.travis.yml](.travis.yml)
+   and [appengine-web.xml](src/main/webapp/WEB-INF/appengine-web.xml) respectively.
 
 That's it. You should be good to go: navigate to https://travis-ci.org/profile, select your GitHub project
 and enable build.
